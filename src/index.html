@@ -10,10 +10,76 @@
 		
 		<div class="wrap">
 			<div class="signUp">
-		
+				<div class="signUp__header">
+					<div class="signUp__header_logo">
+						<img src="img/logo.svg" id="logo"/>
+					</div>
+					<div class="signUp__header_title">Форма регистрации</div>
+				</div>
+				<form class="signUp__form" action="data.json" method="post" id="signUpForm">
+					<div class="signUp__form_field">
+						<label for="name" class="signUp__form_field_label">Имя:</label>
+						<input type="text" id="name" name="name" class="signUp__form_field_input" placeholder="Ваше имя" autofocus required/>
+					</div>
+					
+					<div class="signUp__form_field">
+						<label for="email" class="signUp__form_field_label">E-mail:</label>
+						<input type="email" id="email" name="email" class="signUp__form_field_input" placeholder="email@example.com" required/>
+					</div>
+					<div id="messageMail" class="signUp__form_warning signUp__form_warning_message"></div>
+					
+					<!-- Multiple choice of city -->
+					<div class="signUp__form_field">
+						<label for="city" class="signUp__form_field_label">Город:</label>
+						<input type="text" id="city" name="city" class="signUp__form_field_input" placeholder="Ваш город"/>
+					</div>
+					
+					<div class="signUp__form_field">
+						<label for="pass1" class="signUp__form_field_label">Пароль:</label>
+						<input id="pass1" name="pass1" class="signUp__form_field_input" placeholder="Минимум 6 символов" required/>
+					</div>
+					
+					<div class="signUp__form_field">
+						<label for="pass2" class="signUp__form_field_label">Повторите пароль:</label>
+						<input id="pass2" name="pass2" class="signUp__form_field_input" placeholder="Пароли должны совпадать" required/>
+					</div>
+				</form>
+				<button type="submit" id="signUpButton" class="signUp__button signUp__button_passive">Отправить</button>
 			</div>
 		</div>
 		
-		<script src="js/main.js"></script>
+		<script src="js/main.min.js"></script>
 	</body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

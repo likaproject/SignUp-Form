@@ -4,8 +4,9 @@ var nunjucks      = require('gulp-nunjucks-render');
 var watch    = require('gulp-watch');
 var	minJs    = require('gulp-uglify');
 var minCss   = require('gulp-clean-css');
-var rename = require("gulp-rename");
-var clean = require('gulp-clean');
+var rename	 = require("gulp-rename");
+var clean 	 = require('gulp-clean');
+var concat   = require('gulp-concat');
 
 gulp.task('default', () => {
 	gulp.watch('src/**/*.html', ['html']);
@@ -34,8 +35,15 @@ gulp.task('img', () => {
 //Js for prod
 gulp.task('minJs', () => {
 	return gulp.src('src/js/*.js')
+			.pipe(concat('main.js'))
 			.pipe(minJs())
+			.pipe(rename({suffix: '.min'}))
 			.pipe(gulp.dest('dist/js'));
+});
+//Data file
+gulp.task('data', () => {
+	return gulp.src('src/data.json')
+			.pipe(gulp.dest('dist'));
 });
 //Remoove dist directory
 gulp.task('clean', () => {
@@ -43,7 +51,7 @@ gulp.task('clean', () => {
 			.pipe( clean());
 });
 //Build for prod
-gulp.task('build', ['html', 'sass', 'minJs', 'img']);
+gulp.task('build', ['html', 'sass', 'minJs', 'img', 'data']);
 
 
 
