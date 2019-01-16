@@ -1,0 +1,64 @@
+@import 'colors.scss';
+@import 'mixins.scss';
+
+.signUp{
+	width: 60%;
+	height: 70%;
+	border: 2px solid grey;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	top: 50%;
+	left: 50%;
+	padding: 10px;
+	&__header{
+		height: 80px;
+		&_logo{
+			position: absolute;
+			width: 80px;
+		}
+		&_title{
+			color: $mainFeatureColor;
+			@include vertical-center();
+			@include formTitleFont();
+		}
+	}
+	&__form{
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		top: 10px;
+		&_field{
+			display: flex;
+			justify-content: space-between;
+			width: 50%;
+			padding: 5px;
+			margin: 5px;
+			&_label, &_input{
+				height: 30px;
+				padding: 5px;
+				border: 1px solid $mainFeatureColor;
+				font-size: 16px;
+			}
+			&_label{
+				width: 30%;
+				border-radius: 5px 0 0 5px;
+				border-right: 0;
+				line-height: 30px;
+				color: $labelColor;
+			}
+			&_input{
+				width: 70%;
+				border-radius: 0 5px 5px 0;
+				color: $inputColor;
+				
+				&::-webkit-input-placeholder{
+					color: $inputPlaceholderColor;
+				
+				}
+			}
+		}
+		
+	}
+}
+
