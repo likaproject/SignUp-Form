@@ -10,41 +10,55 @@
 		
 		<div class="wrap">
 			<div class="signUp">
-				<div class="signUp__header">
-					<div class="signUp__header_logo">
+				<div class="signUpHeader">
+					<div class="signUpHeader__logo">
 						<img src="img/logo.svg" id="logo"/>
 					</div>
-					<div class="signUp__header_title">Форма регистрации</div>
+					<div class="signUpHeader__title">Форма регистрации</div>
 				</div>
-				<form class="signUp__form" action="data.json" method="post" id="signUpForm">
-					<div class="signUp__form_field">
-						<label for="name" class="signUp__form_field_label">Имя:</label>
-						<input type="text" id="name" name="name" class="signUp__form_field_input" placeholder="Ваше имя" autofocus required/>
+				
+				<form class="signUpForm" action="#" method="post" id="signUpForm" autocomplete="off">
+					<div class="signUpForm__field">
+						<label for="name" class="signUpForm__field_label border">Имя:</label>
+						
+						<input type="text" id="name" name="name" class="signUpForm__field_input border" placeholder="Ваше имя" autofocus/>
 					</div>
 					
-					<div class="signUp__form_field">
-						<label for="email" class="signUp__form_field_label">E-mail:</label>
-						<input type="email" id="email" name="email" class="signUp__form_field_input" placeholder="email@example.com" required/>
+					<div class="signUpForm__field">
+						<label for="email" class="signUpForm__field_label border">E-mail:</label>
+						
+						<input type="email" id="email" name="email" class="signUpForm__field_input border" placeholder="email@example.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Адрес должен содержать символ @"/>
 					</div>
-					<div id="messageMail" class="signUp__form_warning signUp__form_warning_message"></div>
 					
 					<!-- Multiple choice of city -->
-					<div class="signUp__form_field">
-						<label for="city" class="signUp__form_field_label">Город:</label>
-						<input type="text" id="city" name="city" class="signUp__form_field_input" placeholder="Ваш город"/>
+					<div class="signUpForm__field">
+						<label for="city" class="signUpForm__field_label border">Город:</label>
+						<select name="city" id="city" class="signUpForm__field_select border">
+							<option disabled hidden selected>Ваш город</option>
+							<option value="City1">City 1</option>
+							<option value="City2">City 2</option>
+							<option value="City3">City 3</option>
+							<option value="City4">City 4</option>
+							<option value="City5">City 5</option>
+						</select>
 					</div>
 					
-					<div class="signUp__form_field">
-						<label for="pass1" class="signUp__form_field_label">Пароль:</label>
-						<input id="pass1" name="pass1" class="signUp__form_field_input" placeholder="Минимум 6 символов" required/>
+					<div class="signUpForm__field">
+						<label for="pass1" class="signUpForm__field_label border">Пароль:</label>
+						
+						<input id="pass1" name="pass1" class="signUpForm__field_input border" minlength=6 placeholder="Минимум 6 символов"/>
 					</div>
 					
-					<div class="signUp__form_field">
-						<label for="pass2" class="signUp__form_field_label">Повторите пароль:</label>
-						<input id="pass2" name="pass2" class="signUp__form_field_input" placeholder="Пароли должны совпадать" required/>
+					<div class="signUpForm__field">
+						<label for="pass2" class="signUpForm__field_label border">Повторите пароль:</label>
+						
+						<input id="pass2" name="pass2" class="signUpForm__field_input border" minlength=6 placeholder="Пароли должны совпадать"/>
 					</div>
+					
 				</form>
-				<button type="submit" id="signUpButton" class="signUp__button signUp__button_passive">Отправить</button>
+				
+				<div id="res"></div>
+				<button form="signUpForm" type="submit" id="signUpButton" class="signUpButton signUpButton_passive">Отправить</button>
 			</div>
 		</div>
 		

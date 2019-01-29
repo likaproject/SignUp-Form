@@ -2,8 +2,10 @@
 @import 'mixins.scss';
 
 .signUp{
-	width: 60%;
+	width: 50%;
+	min-width: 670px;
 	height: 70%;
+	min-height: 435px;
 	border: 2px solid grey;
 	padding: 10px;
 	position: absolute;
@@ -12,84 +14,105 @@
 	left: 50%;
 	display: flex;
 	flex-direction: column;
-	&__header{
-		height: 100px;
-		&_logo{
-			position: absolute;
-			width: 100px;
-		}
-		&_title{
-			color: $mainFeatureColor;
-			@include vertical-center();
-			@include formTitleFont();
-		}
+}
+
+.signUpHeader{
+	height: 100px;
+	&__logo{
+		position: absolute;
+		width: 100px;
 	}
-	&__form{
-		position: relative;
+	&__title{
+		color: $mainFeatureColor;
+		@include vertical-center();
+		@include formTitleFont();
+	}
+}
+
+.signUpForm{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	top: 10px;
+	.border{
+		border: 1px solid $mainFeatureColor;
+	}
+	&__field{
 		display: flex;
-		flex-direction: column;
-		align-items: center;
-		top: 10px;
-		&_field{
-			display: flex;
-			justify-content: space-between;
-			width: 50%;
-			height: 50px;
-			margin: 5px;
-			&_label, &_input{
-				height: 30px;
-				padding: 5px;
-				border: 1px solid $mainFeatureColor;
-				font-size: 16px;
+		width: 70%;
+		height: 40px;
+		margin: 5px;
+		&_label, &_input, &_select{
+			padding: 5px;
+			padding-right: 0;
+			font-size: 16px;
+		}
+		&_label{
+			width: 30%;
+			border-radius: 5px 0 0 5px;
+			line-height: 30px;
+			color: $labelColor;
+		}
+		&_input{
+			width: 70%;
+			border-radius: 0 5px 5px 0;
+			color: $inputColor;
+			&:focus{
+				outline: 0; 
 			}
-			&_label{
-				width: 30%;
-				border-radius: 5px 0 0 5px;
-				border-right: 0;
-				line-height: 30px;
-				color: $labelColor;
-			}
-			&_input{
-				width: 70%;
-				border-radius: 0 5px 5px 0;
-				color: $inputColor;
-				&:focus{
-					outline: none; 
-				}
-				&::-webkit-input-placeholder{
-					color: $inputPlaceholderColor;
-				}
+			&::-webkit-input-placeholder{
+				color: $inputPlaceholderColor;
 			}
 		}
-		&_warning{
-			display: flex;
-			justify-content: flex-end;
-			width: 50%;
-			&_message{
-				font-size: 12px;
-				color: $warningColor; 
-				position: relative;
+		&_select{
+			height: 40px;
+			width: 70%;
+			border-radius: 0 5px 5px 0;
+			color: $inputPlaceholderColor;
+			&:focus{
+				outline: 0; 
+			}
+			& option{
+				color: $inputColor;
 			}
 		}
 	}
-	&__button{	
-			width: 150px;
-			height: 30px;
-			position: relative;
-			top: 10px;
-			align-self: center;
-			&_active{
-				background: $mainFeatureColor;
-				border: none;
-				transform: scale(1.1);
-				transition: transform 0.5s;
-			}
-			&_passive{
-				background: $inputPlaceholderColor;
-				border: 1px solid $mainFeatureColor;
-			}
+	&__warning{
+		display: flex;
+		justify-content: flex-end;
+		width: 68%;
+		font-size: 12px;
+		color: $warningColor; 
+		position: relative;
+		&_border{
+			border: 1px solid $warning;
+		}
+	}
+}
+	
+
+.signUpButton{	
+		width: 200px;
+		height: 40px;
+		position: relative;
+		top: 20px;
+		align-self: center;
+		border-radius: 5px;
+		color: $buttonColor;
+		@include formTitleFont();
+		font-size: 18px;
+		&_active{
+			border: 2px solid $buttonActiveBorder;
+			transform: scale(1.1);
+			transition: transform 0.5s;
+		}
+		&_passive{
+			background: #ffffff;
+			border: 2px solid $mainFeatureColor;
 		}
 }
+
 
 
 
